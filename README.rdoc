@@ -30,12 +30,8 @@ to type them in every time a script is run
   
   require 'username_password'
   UsernamePassword.auth_file = "/tmp/authfile"
-  Username.get
+  UsernamePassword.get
   
-== INSTALL:
-
-* gem install username_password
-
 == LICENSE:
 
 The MIT License
