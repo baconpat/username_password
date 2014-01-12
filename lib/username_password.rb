@@ -1,5 +1,6 @@
 require 'highline'
 require 'ezcrypto'
+require 'yaml'
 
 module UsernamePassword
   @@input_io = $stdin
@@ -32,7 +33,7 @@ module UsernamePassword
     username = highline.ask("Username: ")
     password = highline.ask("Password: ") { |q| q.echo = false }
     
-    result = {:username => username, :password => password}
+    result = {:username => username.to_s, :password => password.to_s}
     save_file(result) if @@auth_file
     result
   end
